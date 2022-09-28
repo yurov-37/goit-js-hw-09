@@ -14,7 +14,12 @@ const options = {
   minuteIncrement: 1,
   locale: Ukrainian,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    if (selectedDates[0] < new Date()) {
+      btnStart.setAttribute('disabled', 'true');
+      alert('"Please choose a date in the future"');
+    } else {
+      btnStart.removeAttribute('disabled');
+    }
   },
 };
 
