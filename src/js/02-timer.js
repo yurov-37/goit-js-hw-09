@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Ukrainian } from '../../node_modules/flatpickr/dist/l10n/uk';
@@ -16,7 +17,11 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
       btnStart.setAttribute('disabled', 'true');
-      alert('"Please choose a date in the future"');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please choose a date in the future',
+        icon: 'error',
+      });
     } else {
       btnStart.removeAttribute('disabled');
     }
