@@ -30,7 +30,6 @@ function onFormSubmit(evt) {
             `✅ Fulfilled promise ${position} in ${delay}ms`,
             {
               cssAnimationStyle: 'from - right',
-
               timeout: 5000,
               fontSize: '18px',
             }
@@ -43,7 +42,6 @@ function onFormSubmit(evt) {
             `❌ Rejected promise ${position} in ${delay}ms`,
             {
               cssAnimationStyle: 'from - right',
-
               timeout: 5000,
               fontSize: '18px',
             }
