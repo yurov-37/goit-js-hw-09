@@ -6,7 +6,7 @@ require('flatpickr/dist/themes/dark.css');
 
 let selectedTime = null;
 
-const inputDeadLineData = document.querySelector('#datetime-picker');
+const inputDeadlineData = document.querySelector('#datetime-picker');
 const timer = document.querySelector('.timer');
 const days = document.querySelector('span[data-days]');
 const hours = document.querySelector('span[data-hours]');
@@ -37,7 +37,7 @@ const options = {
   },
 };
 
-flatpickr(inputDeadLineData, options);
+flatpickr(inputDeadlineData, options);
 
 function convertMs(ms) {
   const second = 1000;
