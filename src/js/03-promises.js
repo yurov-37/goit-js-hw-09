@@ -22,7 +22,7 @@ function onFormSubmit(evt) {
   const delayStep = Number(evt.currentTarget.step.value);
   const amount = Number(evt.currentTarget.amount.value);
 
-  for (position = 1; position <= amount; position++) {
+  for (let position = 1; position <= amount; position++) {
     createPromise(position, delay)
       .then(({ position, delay }) =>
         setTimeout(() => {
