@@ -27,14 +27,26 @@ function onFormSubmit(evt) {
       .then(({ position, delay }) =>
         setTimeout(() => {
           Notiflix.Notify.success(
-            `✅ Fulfilled promise ${position} in ${delay}ms`
+            `✅ Fulfilled promise ${position} in ${delay}ms`,
+            {
+              cssAnimationStyle: 'from - right',
+
+              timeout: 5000,
+              fontSize: '18px',
+            }
           );
         }, delay)
       )
       .catch(({ position, delay }) =>
         setTimeout(() => {
           Notiflix.Notify.failure(
-            `❌ Rejected promise ${position} in ${delay}ms`
+            `❌ Rejected promise ${position} in ${delay}ms`,
+            {
+              cssAnimationStyle: 'from - right',
+
+              timeout: 5000,
+              fontSize: '18px',
+            }
           );
         }, delay)
       );
