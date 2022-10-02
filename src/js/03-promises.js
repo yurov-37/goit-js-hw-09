@@ -17,6 +17,22 @@ function createPromise(position, delay) {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+  if (
+    evt.currentTarget.delay.value < 0 ||
+    evt.currentTarget.step.value < 0 ||
+    evt.currentTarget.amount.value < 0
+  ) {
+    Notiflix.Notify.failure(
+      `❌
+Input value cannot be less than 0`,
+      {
+        cssAnimationStyle: 'from - right',
+        timeout: 1000,
+        fontSize: '30px',
+      }
+    );
+    return;
+  }
 
   let delay = Number(evt.currentTarget.delay.value);
   const delayStep = Number(evt.currentTarget.step.value);
